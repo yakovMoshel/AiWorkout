@@ -1,20 +1,9 @@
 import axios from 'axios';
 import User from '../models/user';
 import { IUser } from '../types/user';
+import { SetupFormInput } from '../interfaces/ISetupFormInput';
 
-interface SetupFormInput {
-  gender: string;
-  age: number;
-  height: number;
-  weight: number;
-  goal: string;
-  experience: string;
-  trainingDays: string[];
-  healthNotes: string;
-  preferences?: string[];
-  sessionDuration?: number;
-  planDurationWeeks?: number;
-}
+
 
 export async function generateWorkoutPlan(
   userId: string,
@@ -55,7 +44,6 @@ export async function generateWorkoutPlan(
 
   if (!user) throw new Error("User not found");
 
-  // קריאה ל-API החיצוני לפי הדוקומנטציה
   const options = {
     method: 'POST',
     url: 'https://ai-workout-planner-exercise-fitness-nutrition-guide.p.rapidapi.com/generateWorkoutPlan',
