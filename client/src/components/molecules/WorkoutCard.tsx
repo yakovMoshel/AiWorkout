@@ -4,7 +4,7 @@ import { WorkoutCardProps } from "../../domain/models/interfaces/IWorkoutCardPro
 
 
 
-export default function WorkoutCard({ exercises, dayNumber }: WorkoutCardProps) {
+export default function WorkoutCard({ exercises, dayNumber  }: WorkoutCardProps) {
   return (
     <section className={styles.card}>
       <h2 className={styles.sectionTitle}>
